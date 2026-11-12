@@ -72,7 +72,7 @@
   function textVon(p) {
     const zeilen = [];
     zeilen.push(`${p.name}${p.rolle ? " · " + p.rolle : ""}`);
-    zeilen.push(`Distrikt Marquet, Interview vom ${DATEN.dreh}`);
+    zeilen.push(`Distrikt Marquet, Interview vom ${p.dreh || DATEN.dreh}`);
     p.clips.forEach((c, i) => zeilen.push(`Clip ${p.clips.length > 1 ? i + 1 + " " : ""}Totale ${c.totale} ab ${c.tc}, Nah ${c.nah} ab ${c.nahTc}, ${minSek(c.dauer)} min`));
     zeilen.push("Maschinell transkribiert (Whisper large-v3-turbo), vor Verwendung gegenprüfen.");
     zeilen.push("");
